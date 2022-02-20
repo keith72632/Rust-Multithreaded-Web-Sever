@@ -5,7 +5,13 @@ use std::fs;
 use std::{thread, time::*};
 use server::ThreadPool;
 
+macro_rules! log {
+    ($msg: literal) => {
+        println!("{}", stringify!(&msg));
+    };
+}
 fn main() {
+    log!("hey");
     // let mut connections = 0;
     let listener = 
         TcpListener::bind("127.0.0.1:7878").unwrap();
